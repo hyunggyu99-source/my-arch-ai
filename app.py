@@ -15,7 +15,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
 
-def extract_pdf_text(pdf_bytes: bytes, max_chars: int = 100000) -> str:
+def extract_pdf_text(pdf_bytes: bytes, max_chars: int = 500000) -> str:
     reader = PdfReader(BytesIO(pdf_bytes))
     chunks: list[str] = []
     for page in reader.pages:
@@ -220,4 +220,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
